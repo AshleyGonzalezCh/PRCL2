@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB43D98C2CA1C1EA00E2C422 /* ControladorPantallaCitas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB43D98B2CA1C1EA00E2C422 /* ControladorPantallaCitas.swift */; };
 		FB52AC802C9B2B8B00E2C05F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52AC7F2C9B2B8B00E2C05F /* AppDelegate.swift */; };
 		FB52AC822C9B2B8B00E2C05F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52AC812C9B2B8B00E2C05F /* SceneDelegate.swift */; };
 		FB52AC842C9B2B8B00E2C05F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52AC832C9B2B8B00E2C05F /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB43D98B2CA1C1EA00E2C422 /* ControladorPantallaCitas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControladorPantallaCitas.swift; sourceTree = "<group>"; };
 		FB52AC7C2C9B2B8B00E2C05F /* Boceto_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boceto_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB52AC7F2C9B2B8B00E2C05F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB52AC812C9B2B8B00E2C05F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB43D9882CA1BF2200E2C422 /* controladoresVistas */ = {
+			isa = PBXGroup;
+			children = (
+				FB43D98B2CA1C1EA00E2C422 /* ControladorPantallaCitas.swift */,
+			);
+			path = controladoresVistas;
+			sourceTree = "<group>";
+		};
 		FB52AC732C9B2B8B00E2C05F = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		FB52AC7E2C9B2B8B00E2C05F /* Boceto_1 */ = {
 			isa = PBXGroup;
 			children = (
+				FB43D9882CA1BF2200E2C422 /* controladoresVistas */,
 				FB52ACB42C9B36CC00E2C05F /* Controlador */,
 				FB52ACAF2C9B35B200E2C05F /* Modelo */,
 				FB52AC7F2C9B2B8B00E2C05F /* AppDelegate.swift */,
@@ -284,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB52ACB12C9B35D100E2C05F /* IUBoton.swift in Sources */,
+				FB43D98C2CA1C1EA00E2C422 /* ControladorPantallaCitas.swift in Sources */,
 				FB52ACB62C9B36E000E2C05F /* GenCitas.swift in Sources */,
 				FB52ACB32C9B364100E2C05F /* Cita.swift in Sources */,
 				FB52AC842C9B2B8B00E2C05F /* ViewController.swift in Sources */,

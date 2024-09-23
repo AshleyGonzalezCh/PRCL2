@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct cita {
+struct Cita{
     var nombre: String
+    
     var texto: String
     
     init(quien_lo_dijo: String, que_dijo: String){
