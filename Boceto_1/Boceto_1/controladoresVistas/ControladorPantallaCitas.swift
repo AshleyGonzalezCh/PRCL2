@@ -10,30 +10,33 @@ import UIKit
 
 
 class ControladorPantallaCitas: UIViewController {
-
+    
     @IBOutlet weak var nombre_de_quien_lo_dijo: UILabel!
     @IBOutlet weak var que_dijo_caja_texto: UILabel!
     
-    var quien_lo_dijo: String
-    var muroTexto: String
+    var cita_actual: Cita
 
-        required init?(coder: NSCoder) {
-            self.muroTexto = ""
-            self.quien_lo_dijo = ""
-            
-            super.init(coder: coder)
-
-            print("Se cargó el default INIT")
+    required init?(coder: NSCoder) {
+        self.cita_actual = Cita(quien_lo_dijo: "Desarrollador", que_dijo: "Tenemos 1problema chikis")
+        super.init(coder: coder)
+        print("Se cargó el default INIT")
         }
     
-    init(muro_Texto: String, de_quien: String, coder: NSCoder){
+    init?(cita_para_citar: Cita, coder: NSCoder){
+           self.cita_actual = cita_para_citar
+           super.init(coder: coder)
+       }
+       
+    
+    
+    
+   /*/ init(muro_Texto: String, de_quien: String, coder: NSCoder){
         self.muroTexto = muro_Texto
         self.quien_lo_dijo = de_quien
             
         super.init(coder: coder)!
-            
-
         }
+    */
     
     
     override func viewDidLoad() {
@@ -42,8 +45,8 @@ class ControladorPantallaCitas: UIViewController {
     }
     
     func inicializar_pantalla(){
-        nombre_de_quien_lo_dijo.text = self.quien_lo_dijo
-        que_dijo_caja_texto.text = self.muroTexto
+        nombre_de_quien_lo_dijo.text = cita_actual.nombre
+        que_dijo_caja_texto.text = cita_actual.texto
     }
     
 }
