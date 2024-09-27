@@ -11,6 +11,7 @@ import UIKit
 
 class ControladorPantallaCitas: UIViewController {
     
+    @IBOutlet weak var RegenerarCita: UIButton!
     @IBOutlet weak var nombre_de_quien_lo_dijo: UILabel!
     @IBOutlet weak var que_dijo_caja_texto: UILabel!
     
@@ -47,6 +48,11 @@ class ControladorPantallaCitas: UIViewController {
     func inicializar_pantalla(){
         nombre_de_quien_lo_dijo.text = cita_actual.nombre
         que_dijo_caja_texto.text = cita_actual.texto
+    }
+    
+    @IBAction func reiniciar_pantalla(sender: UIButton){
+        self.viewDidLoad()
+        inicializar_pantalla()
     }
     
 }

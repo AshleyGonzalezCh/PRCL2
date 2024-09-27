@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     var citas_disponiblea: GeneradorDeCitas = GeneradorDeCitas()
     var cita_para_enviar: Cita = Cita(quien_lo_dijo: "Elon Musk", que_dijo: "Monimonimoni")
-
+    
     override func viewDidLoad() {
         citas_disponiblea.generar_citas_falsas()
         super.viewDidLoad()
@@ -22,5 +22,13 @@ class ViewController: UIViewController {
         return ControladorPantallaCitas(cita_para_citar: citas_disponiblea.obtener_cita(), coder: coder)
     }
     
+    @IBAction func volver_al_inicio(segue: UIStoryboardSegue){
+        if let pantalla_agregar_citas = segue.source as?
+            ControladorGeneradorCita{
+            citas_disponiblea.agregar_cita(pantalla_agregar_citas.cita_creada!)
+        }
+    }
+    
+
 }
 

@@ -14,27 +14,31 @@ class GeneradorDeCitas{
         citas_creadas = []
     }
     
-    func agregar_cita(_ que_dijo: String, quien_lo_dijo: String){
+    func agregar_cita_manual(_ que_dijo: String, quien_lo_dijo: String){
         let cita_generada = Cita(quien_lo_dijo: quien_lo_dijo, que_dijo: que_dijo)
         
         citas_creadas.append(cita_generada)
     }
     
+    func agregar_cita(_ cita_nueva: Cita){
+        citas_creadas.append(cita_nueva)
+    }
+    
     
     func generar_citas_falsas(){
-        self.agregar_cita("Qué bonita casa:)",
+        self.agregar_cita_manual("Qué bonita casa:)",
                      quien_lo_dijo: "Creeper"
         )
         
-        self.agregar_cita("¡La vida es corta, ¡explota al máximo!",
+        self.agregar_cita_manual("¡La vida es corta, ¡explota al máximo!",
                           quien_lo_dijo: "Creeper"
         )
         
-        self.agregar_cita("GRrrrrr grrr grrr GRRRRR grrrgGRGRh",
+        self.agregar_cita_manual("GRrrrrr grrr grrr GRRRRR grrrgGRGRh",
                           quien_lo_dijo: "Zombie"
         )
         
-        self.agregar_cita("Solia ser un explorador como tu... Pero me dieron con una flecha en la rodilla",
+        self.agregar_cita_manual("Solia ser un explorador como tu... Pero me dieron con una flecha en la rodilla",
                           quien_lo_dijo: "Guardia"
         )
     }

@@ -20,6 +20,7 @@
 		FB52ACB12C9B35D100E2C05F /* IUBoton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52ACB02C9B35D100E2C05F /* IUBoton.swift */; };
 		FB52ACB32C9B364100E2C05F /* Cita.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52ACB22C9B364100E2C05F /* Cita.swift */; };
 		FB52ACB62C9B36E000E2C05F /* GenCitas.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB52ACB52C9B36E000E2C05F /* GenCitas.swift */; };
+		FB9D214E2CA70EB800026FE3 /* Controlador_Nueva_Cita.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9D214D2CA70EB800026FE3 /* Controlador_Nueva_Cita.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FB52ACB02C9B35D100E2C05F /* IUBoton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IUBoton.swift; sourceTree = "<group>"; };
 		FB52ACB22C9B364100E2C05F /* Cita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cita.swift; sourceTree = "<group>"; };
 		FB52ACB52C9B36E000E2C05F /* GenCitas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenCitas.swift; sourceTree = "<group>"; };
+		FB9D214D2CA70EB800026FE3 /* Controlador_Nueva_Cita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controlador_Nueva_Cita.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				FB43D98B2CA1C1EA00E2C422 /* ControladorPantallaCitas.swift */,
+				FB9D214D2CA70EB800026FE3 /* Controlador_Nueva_Cita.swift */,
 			);
 			path = controladoresVistas;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				FB43D98C2CA1C1EA00E2C422 /* ControladorPantallaCitas.swift in Sources */,
 				FB52ACB62C9B36E000E2C05F /* GenCitas.swift in Sources */,
 				FB52ACB32C9B364100E2C05F /* Cita.swift in Sources */,
+				FB9D214E2CA70EB800026FE3 /* Controlador_Nueva_Cita.swift in Sources */,
 				FB52AC842C9B2B8B00E2C05F /* ViewController.swift in Sources */,
 				FB52AC802C9B2B8B00E2C05F /* AppDelegate.swift in Sources */,
 				FB52AC822C9B2B8B00E2C05F /* SceneDelegate.swift in Sources */,
