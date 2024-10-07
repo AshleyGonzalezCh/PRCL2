@@ -924,6 +924,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="4Q0-x5-RV8"/>
         <segue reference="pfg-p2-k8M"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JI9-9x-kjO">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="oKH-3P-STh">
+            <objects>
+                <navigationController id="H4x-fW-B3g" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rTJ-yZ-N0h">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="JI9-9x-kjO" kind="relationship" relationship="rootViewController" id="yKa-qd-pR4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJP-d1-Kf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178" y="120"/>
+        </scene>
+        <!--Controlador Pantalla Principal-->
+        <scene sceneID="oNB-Th-ldS">
+            <objects>
+                <collectionViewController id="JI9-9x-kjO" customClass="ControladorPantallaPrincipal" customModule="Boceto2" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="N0f-jV-Pay">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="esq-wz-SRe">
+                            <size key="itemSize" width="390" height="306"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Celda_Pantalla_Principal" id="3xa-MU-fum" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
+                                <rect key="frame" x="1.6666666666666667" y="0.0" width="390" height="306"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CJF-3G-WsP">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-Vh-WWB">
+                                            <rect key="frame" x="160" y="142.66666666666666" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="centerY" secondItem="CJF-3G-WsP" secondAttribute="centerY" id="Ndz-CE-40S"/>
+                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CJF-3G-WsP" secondAttribute="leading" constant="20" symbolic="YES" id="Wym-bk-ANi"/>
+                                        <constraint firstAttribute="trailing" secondItem="bWJ-Vh-WWB" secondAttribute="trailing" constant="188" id="lBd-29-e6z"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <color key="backgroundColor" red="0.29211825940000002" green="1" blue="0.31473356730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="customSize" width="390" height="306"/>
+                                <connections>
+                                    <outlet property="EtiquetaText" destination="bWJ-Vh-WWB" id="W2s-HY-OA6"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="JI9-9x-kjO" id="QoF-IE-g7d"/>
+                            <outlet property="delegate" destination="JI9-9x-kjO" id="xn1-MU-FJD"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="lqe-N7-JUp"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kBa-Xk-RJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533.58778625954199" y="119.71830985915494"/>
+        </scene>
+    </scenes>
+</document>

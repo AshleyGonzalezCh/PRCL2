@@ -24,4 +24,11 @@ class ControladorGeneradorCita: UIViewController{
         override func viewDidLoad() {
             super.viewDidLoad()
         }
+    
+    @IBAction func volver_al_inicio(segue: UIStoryboardSegue){
+        if let pantalla_agregar_citas = segue.source as?
+            ControladorGeneradorCita{
+            citas_disponiblea.agregar_cita(pantalla_agregar_citas.cita_creada!)
+        }
+    }
 }

@@ -22,13 +22,14 @@ class ViewController: UIViewController {
         return ControladorPantallaCitas(cita_para_citar: citas_disponiblea.obtener_cita(), coder: coder)
     }
     
-    @IBAction func volver_al_inicio(segue: UIStoryboardSegue){
-        if let pantalla_agregar_citas = segue.source as?
-            ControladorGeneradorCita{
-            citas_disponiblea.agregar_cita(pantalla_agregar_citas.cita_creada!)
+    @IBAction func voler_a_pantalla_inicio(segue: UIStoryboardSegue){
+            if let pantalla_agregar_citas = segue.source as? ControladorGeneradorCita{
+                citas_disponiblea.agregar_cita(pantalla_agregar_citas.cita_creada!)
+            }
+            
         }
-    }
     
+
 
 }
 
