@@ -42,7 +42,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Celda_Pantalla_Principal" id="3xa-MU-fum" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
                                 <rect key="frame" x="1.6666666666666667" y="0.0" width="390" height="306"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CJF-3G-WsP">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CJF-3G-WsP" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>

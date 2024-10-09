@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB03EB542CB6D78F00C1E8F5 /* POST.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB03EB532CB6D78F00C1E8F5 /* POST.swift */; };
 		FBB39E872CB433DE00F02F63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39E862CB433DE00F02F63 /* AppDelegate.swift */; };
 		FBB39E892CB433DE00F02F63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39E882CB433DE00F02F63 /* SceneDelegate.swift */; };
 		FBB39E8B2CB433DE00F02F63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39E8A2CB433DE00F02F63 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB03EB532CB6D78F00C1E8F5 /* POST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POST.swift; sourceTree = "<group>"; };
 		FBB39E832CB433DE00F02F63 /* Boceto2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boceto2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB39E862CB433DE00F02F63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBB39E882CB433DE00F02F63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB03EB522CB6D77A00C1E8F5 /* Modelos */ = {
+			isa = PBXGroup;
+			children = (
+				FB03EB532CB6D78F00C1E8F5 /* POST.swift */,
+			);
+			name = Modelos;
+			sourceTree = "<group>";
+		};
 		FBB39E7A2CB433DE00F02F63 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 		FBB39E852CB433DE00F02F63 /* Boceto2 */ = {
 			isa = PBXGroup;
 			children = (
+				FB03EB522CB6D77A00C1E8F5 /* Modelos */,
 				FBB39EB62CB4369300F02F63 /* controladores_pantallas */,
 				FBB39E862CB433DE00F02F63 /* AppDelegate.swift */,
 				FBB39E882CB433DE00F02F63 /* SceneDelegate.swift */,
@@ -281,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB39EBD2CB43D4A00F02F63 /* Clase_Vista_Celda.swift in Sources */,
+				FB03EB542CB6D78F00C1E8F5 /* POST.swift in Sources */,
 				FBB39E8B2CB433DE00F02F63 /* ViewController.swift in Sources */,
 				FBB39E872CB433DE00F02F63 /* AppDelegate.swift in Sources */,
 				FBB39E892CB433DE00F02F63 /* SceneDelegate.swift in Sources */,

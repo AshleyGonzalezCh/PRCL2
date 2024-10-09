@@ -10,19 +10,42 @@ import UIKit
 private let ID_celda = "Celda_Pantalla_Principal"
 
 class ControladorPantallaPrincipal: UICollectionViewController {
-
-    override func viewDidLoad() {
+    private var lista_de_publicaciones: [Post] = []
+    private let url_de_publicaciones = "https://jsonplaceholder.typicode.com/posts"
+    
+    //private let ID_celda = "celdas_pantalla_principal"
+    override func viewDidLoad() 
+        {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        //ESTE CÓDIGO SIRVE PARA IR SOBREESCRIBIENDO LAS CELDAS, PERO USA EL BG COLOR DEL CONTROLADOR BASE
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: ID_celda)
-
-        // Do any additional setup after loading the view.
-    }
+            func obtener_publicaciones()
+            {
+                
+            }
+        let ubicacion = URL(string: url_de_publicaciones)!
+            URLSession.shared.dataTask(with: ubicacion) 
+            {
+                (datos, respuesta, error) in do
+                    {
+                        if let publicaciones_recibidas = datos
+                        {
+                            let prueba_de_interpretacion_de_datos = try JSONDecoder().decode([Post].self, from: publicaciones_recibidas)
+                            DispatchQueue.main.async
+                            {
+                                self.lista_de_publicaciones = prueba_de_interpretacion_de_datos
+                            }
+                        }else
+                        {
+                            print(respuesta)
+                        }
+                    } 
+                catch
+                    {
+                        print("Error")
+                    }
+            }.resume()
+            
+            print (lista_de_publicaciones)
+        }
 
     /*
     // MARK: - Navigation
@@ -38,13 +61,13 @@ class ControladorPantallaPrincipal: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 2
+        return lista_de_publicaciones.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 5
+        return 20
     }
 
     //Función para odentofocar u crear cada una de las celdas creadas en el controlador
@@ -61,6 +84,13 @@ class ControladorPantallaPrincipal: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Se seleccionó la celda \(indexPath)")
     }
+    
+    
+    
+    
+    
+    
+    
 
     // MARK: UICollectionViewDelegate
 
