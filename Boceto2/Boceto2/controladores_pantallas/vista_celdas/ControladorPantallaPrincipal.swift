@@ -28,24 +28,35 @@ class ControladorPantallaPrincipal: UICollectionViewController {
                     {
                         if let publicaciones_recibidas = datos
                         {
-                            let prueba_de_interpretacion_de_datos = try JSONDecoder().decode([Post].self, from: publicaciones_recibidas)
-                            DispatchQueue.main.async
-                            {
-                                self.lista_de_publicaciones = prueba_de_interpretacion_de_datos
+                            let prueba_de_interpretacion_de_datos = try 
+                            JSONDecoder().decode([Post].self, from: publicaciones_recibidas)
+
+                            self.lista_de_publicaciones = prueba_de_interpretacion_de_datos
+                            DispatchQueue.main.async {
+                                self.collectionView.reloadData()
                             }
-                        }else
-                        {
+                            
+                        }else {
                             print(respuesta)
                         }
-                    } 
-                catch
-                    {
+                    } catch {
                         print("Error")
                     }
             }.resume()
             
             print (lista_de_publicaciones)
         }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+           print("Se selecciono la celda\(indexPath)")
+           
+           let pantalla_de_publicacion = storyboard?.instantiateViewController(withIdentifier: "PantallaPublicacion") as! ControladorPantallaDelPost
+           
+           self.navigationController?.pushViewController(pantalla_de_publicacion, animated: true)
+           
+           print(self.navigationController)
+
+       }
 
     /*
     // MARK: - Navigation
@@ -61,13 +72,13 @@ class ControladorPantallaPrincipal: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return lista_de_publicaciones.count
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 20
+        return self.lista_de_publicaciones.count
     }
 
     //Función para odentofocar u crear cada una de las celdas creadas en el controlador
@@ -77,19 +88,11 @@ class ControladorPantallaPrincipal: UICollectionViewController {
         // Configure the cell
         //CAMBIAR COLOR DE LA CELDA
         //celda.backgroundColor = UIColor.red
-        celda.EtiquetaText.text = ("\(indexPath)")
+        celda.EtiquetaText.text = self.lista_de_publicaciones[indexPath.item].title
+        celda.CuerpoText.text = self.lista_de_publicaciones[indexPath.item].body
+        print(self.lista_de_publicaciones[indexPath.item].title)
         return celda
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Se seleccionó la celda \(indexPath)")
-    }
-    
-    
-    
-    
-    
-    
     
 
     // MARK: UICollectionViewDelegate

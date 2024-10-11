@@ -19,6 +19,10 @@
 		FBB39EAA2CB433DF00F02F63 /* Boceto2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39EA92CB433DF00F02F63 /* Boceto2UITestsLaunchTests.swift */; };
 		FBB39EB92CB4376800F02F63 /* ControladorPantallaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39EB82CB4376800F02F63 /* ControladorPantallaPrincipal.swift */; };
 		FBB39EBD2CB43D4A00F02F63 /* Clase_Vista_Celda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39EBC2CB43D4A00F02F63 /* Clase_Vista_Celda.swift */; };
+		FBF3AFD32CB979CE00D5B680 /* ControladorPantalladelPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3AFD22CB979CE00D5B680 /* ControladorPantalladelPost.swift */; };
+		FBF3AFD62CB97A6D00D5B680 /* proveedor_publicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3AFD52CB97A6D00D5B680 /* proveedor_publicaciones.swift */; };
+		FBF3AFD92CB9833C00D5B680 /* mod_navegador_principal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3AFD82CB9833C00D5B680 /* mod_navegador_principal.swift */; };
+		FBF3AFDB2CB9850F00D5B680 /* EstiloCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3AFDA2CB9850F00D5B680 /* EstiloCellViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,10 @@
 		FBB39EA92CB433DF00F02F63 /* Boceto2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boceto2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FBB39EB82CB4376800F02F63 /* ControladorPantallaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControladorPantallaPrincipal.swift; sourceTree = "<group>"; };
 		FBB39EBC2CB43D4A00F02F63 /* Clase_Vista_Celda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clase_Vista_Celda.swift; sourceTree = "<group>"; };
+		FBF3AFD22CB979CE00D5B680 /* ControladorPantalladelPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControladorPantalladelPost.swift; sourceTree = "<group>"; };
+		FBF3AFD52CB97A6D00D5B680 /* proveedor_publicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = proveedor_publicaciones.swift; sourceTree = "<group>"; };
+		FBF3AFD82CB9833C00D5B680 /* mod_navegador_principal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mod_navegador_principal.swift; sourceTree = "<group>"; };
+		FBF3AFDA2CB9850F00D5B680 /* EstiloCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstiloCellViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 		FBB39E852CB433DE00F02F63 /* Boceto2 */ = {
 			isa = PBXGroup;
 			children = (
+				FBF3AFD42CB97A5700D5B680 /* Proveedor */,
 				FB03EB522CB6D77A00C1E8F5 /* Modelos */,
 				FBB39EB62CB4369300F02F63 /* controladores_pantallas */,
 				FBB39E862CB433DE00F02F63 /* AppDelegate.swift */,
@@ -146,7 +155,9 @@
 		FBB39EB62CB4369300F02F63 /* controladores_pantallas */ = {
 			isa = PBXGroup;
 			children = (
+				FBF3AFD72CB9832900D5B680 /* Estilos */,
 				FBB39EB72CB436C400F02F63 /* vista_celdas */,
+				FBF3AFD22CB979CE00D5B680 /* ControladorPantalladelPost.swift */,
 			);
 			path = controladores_pantallas;
 			sourceTree = "<group>";
@@ -158,6 +169,23 @@
 				FBB39EBC2CB43D4A00F02F63 /* Clase_Vista_Celda.swift */,
 			);
 			path = vista_celdas;
+			sourceTree = "<group>";
+		};
+		FBF3AFD42CB97A5700D5B680 /* Proveedor */ = {
+			isa = PBXGroup;
+			children = (
+				FBF3AFD52CB97A6D00D5B680 /* proveedor_publicaciones.swift */,
+			);
+			path = Proveedor;
+			sourceTree = "<group>";
+		};
+		FBF3AFD72CB9832900D5B680 /* Estilos */ = {
+			isa = PBXGroup;
+			children = (
+				FBF3AFD82CB9833C00D5B680 /* mod_navegador_principal.swift */,
+				FBF3AFDA2CB9850F00D5B680 /* EstiloCellViewController.swift */,
+			);
+			path = Estilos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,9 +321,13 @@
 			files = (
 				FBB39EBD2CB43D4A00F02F63 /* Clase_Vista_Celda.swift in Sources */,
 				FB03EB542CB6D78F00C1E8F5 /* POST.swift in Sources */,
+				FBF3AFD32CB979CE00D5B680 /* ControladorPantalladelPost.swift in Sources */,
 				FBB39E8B2CB433DE00F02F63 /* ViewController.swift in Sources */,
 				FBB39E872CB433DE00F02F63 /* AppDelegate.swift in Sources */,
 				FBB39E892CB433DE00F02F63 /* SceneDelegate.swift in Sources */,
+				FBF3AFD62CB97A6D00D5B680 /* proveedor_publicaciones.swift in Sources */,
+				FBF3AFD92CB9833C00D5B680 /* mod_navegador_principal.swift in Sources */,
+				FBF3AFDB2CB9850F00D5B680 /* EstiloCellViewController.swift in Sources */,
 				FBB39EB92CB4376800F02F63 /* ControladorPantallaPrincipal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

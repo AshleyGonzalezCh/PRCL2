@@ -46,8 +46,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-Vh-WWB">
-                                            <rect key="frame" x="160" y="142.66666666666666" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-Vh-WWB">
+                                            <rect key="frame" x="159" y="30" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-Ud-deD" userLabel="Cuerpo Text">
+                                            <rect key="frame" x="158" y="96" width="42" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -62,6 +69,7 @@
                                 <color key="backgroundColor" red="0.29211825940000002" green="1" blue="0.31473356730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <size key="customSize" width="390" height="306"/>
                                 <connections>
+                                    <outlet property="CuerpoText" destination="ZP7-Ud-deD" id="iSx-pZ-97e"/>
                                     <outlet property="EtiquetaText" destination="bWJ-Vh-WWB" id="W2s-HY-OA6"/>
                                 </connections>
                             </collectionViewCell>
