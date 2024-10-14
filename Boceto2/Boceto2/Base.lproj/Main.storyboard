@@ -46,24 +46,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-Vh-WWB">
-                                            <rect key="frame" x="159" y="30" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" sizingRule="oversize" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-Vh-WWB">
+                                            <rect key="frame" x="20" y="32" width="350" height="36"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <color key="textColor" red="1" green="0.41769213616555079" blue="0.49681903046647435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-Ud-deD" userLabel="Cuerpo Text">
-                                            <rect key="frame" x="158" y="96" width="42" height="32"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-Ud-deD" userLabel="Cuerpo Text">
+                                            <rect key="frame" x="20" y="78" width="350" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="cXe-zI-7dM"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="0.99607674390000001" green="0.98830867639999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.22720901177997391" green="0.23135470360824739" blue="0.22419314012532468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="centerY" secondItem="CJF-3G-WsP" secondAttribute="centerY" id="Ndz-CE-40S"/>
-                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CJF-3G-WsP" secondAttribute="leading" constant="20" symbolic="YES" id="Wym-bk-ANi"/>
-                                        <constraint firstAttribute="trailing" secondItem="bWJ-Vh-WWB" secondAttribute="trailing" constant="188" id="lBd-29-e6z"/>
+                                        <constraint firstAttribute="trailing" secondItem="ZP7-Ud-deD" secondAttribute="trailing" constant="20" id="8fa-Iq-yrA"/>
+                                        <constraint firstItem="ZP7-Ud-deD" firstAttribute="leading" secondItem="CJF-3G-WsP" secondAttribute="leading" constant="20" id="8yo-a4-UhU"/>
+                                        <constraint firstAttribute="trailing" secondItem="bWJ-Vh-WWB" secondAttribute="trailing" constant="20" id="XKJ-NM-LbW"/>
+                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="leading" secondItem="CJF-3G-WsP" secondAttribute="leading" constant="20" id="bvt-Ke-CEb"/>
+                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="top" secondItem="CJF-3G-WsP" secondAttribute="top" constant="32" id="uV3-Wn-cKM"/>
+                                        <constraint firstItem="ZP7-Ud-deD" firstAttribute="top" secondItem="bWJ-Vh-WWB" secondAttribute="bottom" constant="10" id="z4u-Pe-eI7"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <color key="backgroundColor" red="0.29211825940000002" green="1" blue="0.31473356730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

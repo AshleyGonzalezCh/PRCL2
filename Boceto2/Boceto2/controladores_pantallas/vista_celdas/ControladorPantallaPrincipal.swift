@@ -54,7 +54,7 @@ class ControladorPantallaPrincipal: UICollectionViewController {
            
            self.navigationController?.pushViewController(pantalla_de_publicacion, animated: true)
            
-           print(self.navigationController)
+           //print(self.navigationController)
 
        }
 

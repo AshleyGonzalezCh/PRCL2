@@ -10,26 +10,27 @@ extension ControladorPantallaPrincipal: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var ancho = self.collectionView.frame.width
         var largo = self.collectionView.frame.height
-        ancho = ancho/3.5
-        largo = ancho * 0.5
+        //ancho = ancho/2
+        largo = largo / 3
         
         return CGSize(width: ancho, height: largo)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        var margin = CGFloat(10)
+        let margin = CGFloat(5)
         return UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, minimunLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         
         return 5
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, minimumInteritSpacingForSectionAt section: Int) -> CGFloat {
-        var ancho = self.collectionView.frame.width
-        ancho = ancho/3.5
-        return 5
-    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            var ancho = self.collectionView.frame.width
+            ancho = ancho / 5
+            
+            return ancho
+        }
 }
