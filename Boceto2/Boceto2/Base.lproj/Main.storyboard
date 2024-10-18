@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,73 +94,25 @@
             </objects>
             <point key="canvasLocation" x="533.58778625954199" y="119.71830985915494"/>
         </scene>
-        <!--Controlador Pantalla Publicacion-->
-        <scene sceneID="nTj-5b-YIb">
+        <!--Controlador Pantalla Del Post-->
+        <scene sceneID="uHy-rZ-POC">
             <objects>
-                <collectionViewController id="pt9-Fg-0FP" customClass="ControladorPantallaPublicacion" customModule="Boceto2" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="GdK-ci-4mG">
+                <viewController storyboardIdentifier="pantalla_de_publicacion" id="gPH-Fw-Y9j" customClass="ControladorPantallaDelPost" customModule="Boceto2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="llk-xZ-DOr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6AU-xt-kzZ">
-                            <size key="itemSize" width="390" height="306"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Celda_Pantalla_Principal" id="OB0-Qz-Fx6" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
-                                <rect key="frame" x="1.6666666666666667" y="0.0" width="390" height="306"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4Xq-pS-984" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" sizingRule="oversize" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UqS-O9-Jdu">
-                                            <rect key="frame" x="20" y="32" width="350" height="36"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                            <color key="textColor" red="1" green="0.41769213620000001" blue="0.49681903049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5o-R6-cyh" userLabel="Cuerpo Text">
-                                            <rect key="frame" x="20" y="78" width="350" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="gPC-P2-hqX"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.99607674390000001" green="0.98830867639999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.2272090118" green="0.23135470359999999" blue="0.22419314009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="UqS-O9-Jdu" firstAttribute="leading" secondItem="4Xq-pS-984" secondAttribute="leading" constant="20" id="6jo-QX-Srn"/>
-                                        <constraint firstItem="T5o-R6-cyh" firstAttribute="top" secondItem="UqS-O9-Jdu" secondAttribute="bottom" constant="10" id="8kn-wq-xMv"/>
-                                        <constraint firstAttribute="trailing" secondItem="T5o-R6-cyh" secondAttribute="trailing" constant="20" id="Kx8-Na-7hI"/>
-                                        <constraint firstItem="UqS-O9-Jdu" firstAttribute="top" secondItem="4Xq-pS-984" secondAttribute="top" constant="32" id="Rku-SE-GJT"/>
-                                        <constraint firstItem="T5o-R6-cyh" firstAttribute="leading" secondItem="4Xq-pS-984" secondAttribute="leading" constant="20" id="v90-Zt-0rG"/>
-                                        <constraint firstAttribute="trailing" secondItem="UqS-O9-Jdu" secondAttribute="trailing" constant="20" id="wUl-KW-T4A"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <color key="backgroundColor" red="0.29211825940000002" green="1" blue="0.31473356730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="customSize" width="390" height="306"/>
-                                <connections>
-                                    <outlet property="CuerpoText" destination="T5o-R6-cyh" id="4Ze-YM-D7e"/>
-                                    <outlet property="EtiquetaText" destination="UqS-O9-Jdu" id="UOW-ze-u7d"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="pt9-Fg-0FP" id="Sqn-vF-vjq"/>
-                            <outlet property="delegate" destination="pt9-Fg-0FP" id="1ix-UT-jZC"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="hDQ-as-mnz"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="A3m-I2-aIw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="3oq-Eo-cJb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1gw-Pf-3pQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1195" y="120"/>
+            <point key="canvasLocation" x="1256" y="120"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

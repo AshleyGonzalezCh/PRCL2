@@ -11,46 +11,28 @@ private let ID_celda = "Celda_Pantalla_Principal"
 
 class ControladorPantallaPrincipal: UICollectionViewController {
     private var lista_de_publicaciones: [Post] = []
-    private let url_de_publicaciones = "https://jsonplaceholder.typicode.com/posts"
+    let proveedor_de_publicaciones = ProveedorDePublicaciones.autoreferencia
     
     //private let ID_celda = "celdas_pantalla_principal"
     override func viewDidLoad() 
         {
         super.viewDidLoad()
-            func obtener_publicaciones()
-            {
-                
-            }
-        let ubicacion = URL(string: url_de_publicaciones)!
-            URLSession.shared.dataTask(with: ubicacion) 
-            {
-                (datos, respuesta, error) in do
-                    {
-                        if let publicaciones_recibidas = datos
-                        {
-                            let prueba_de_interpretacion_de_datos = try 
-                            JSONDecoder().decode([Post].self, from: publicaciones_recibidas)
-
-                            self.lista_de_publicaciones = prueba_de_interpretacion_de_datos
-                            DispatchQueue.main.async {
-                                self.collectionView.reloadData()
-                            }
-                            
-                        }else {
-                            print(respuesta)
-                        }
-                    } catch {
-                        print("Error")
-                    }
-            }.resume()
-            
-            print (lista_de_publicaciones)
+            proveedor_de_publicaciones.obtener_publicaicones(que_hacer_al_recibir: {
+                [weak self] (Publicaciones) in self?.lista_de_publicaciones = Publicaciones
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            })
         }
+    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
            print("Se selecciono la celda\(indexPath)")
            
            let pantalla_de_publicacion = storyboard?.instantiateViewController(withIdentifier: "PantallaPublicacion") as! ControladorPantallaDelPost
+        
+        pantalla_de_publicacion.id_publicacion = self.lista_de_publicaciones[indexPath.item].id
+        
            
            self.navigationController?.pushViewController(pantalla_de_publicacion, animated: true)
            
