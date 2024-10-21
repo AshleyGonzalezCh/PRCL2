@@ -72,9 +72,11 @@ class ControladorPantallaPrincipal: UICollectionViewController {
         //celda.backgroundColor = UIColor.red
         celda.EtiquetaText.text = self.lista_de_publicaciones[indexPath.item].title
         celda.CuerpoText.text = self.lista_de_publicaciones[indexPath.item].body
-        print(self.lista_de_publicaciones[indexPath.item].title)
+        //print(self.lista_de_publicaciones[indexPath.item].title)
         return celda
     }
+    
+    
     
 
     // MARK: UICollectionViewDelegate

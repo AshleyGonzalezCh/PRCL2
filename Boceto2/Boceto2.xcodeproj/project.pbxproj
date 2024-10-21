@@ -19,6 +19,8 @@
 		FBB39EAA2CB433DF00F02F63 /* Boceto2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39EA92CB433DF00F02F63 /* Boceto2UITestsLaunchTests.swift */; };
 		FBB39EB92CB4376800F02F63 /* ControladorPantallaPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39EB82CB4376800F02F63 /* ControladorPantallaPrincipal.swift */; };
 		FBB39EBD2CB43D4A00F02F63 /* Clase_Vista_Celda.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB39EBC2CB43D4A00F02F63 /* Clase_Vista_Celda.swift */; };
+		FBB80AA62CC6B34F00745B0C /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80AA52CC6B34F00745B0C /* Usuario.swift */; };
+		FBB80AA82CC6B91400745B0C /* Comentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB80AA72CC6B91400745B0C /* Comentario.swift */; };
 		FBF3AFD32CB979CE00D5B680 /* ControladorPantalladelPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3AFD22CB979CE00D5B680 /* ControladorPantalladelPost.swift */; };
 		FBF3AFD62CB97A6D00D5B680 /* proveedor_publicaciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3AFD52CB97A6D00D5B680 /* proveedor_publicaciones.swift */; };
 		FBF3AFD92CB9833C00D5B680 /* mod_navegador_principal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF3AFD82CB9833C00D5B680 /* mod_navegador_principal.swift */; };
@@ -59,6 +61,8 @@
 		FBB39EA92CB433DF00F02F63 /* Boceto2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boceto2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FBB39EB82CB4376800F02F63 /* ControladorPantallaPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControladorPantallaPrincipal.swift; sourceTree = "<group>"; };
 		FBB39EBC2CB43D4A00F02F63 /* Clase_Vista_Celda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clase_Vista_Celda.swift; sourceTree = "<group>"; };
+		FBB80AA52CC6B34F00745B0C /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		FBB80AA72CC6B91400745B0C /* Comentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comentario.swift; sourceTree = "<group>"; };
 		FBF3AFD22CB979CE00D5B680 /* ControladorPantalladelPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControladorPantalladelPost.swift; sourceTree = "<group>"; };
 		FBF3AFD52CB97A6D00D5B680 /* proveedor_publicaciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = proveedor_publicaciones.swift; sourceTree = "<group>"; };
 		FBF3AFD82CB9833C00D5B680 /* mod_navegador_principal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mod_navegador_principal.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				FB03EB532CB6D78F00C1E8F5 /* POST.swift */,
+				FBB80AA52CC6B34F00745B0C /* Usuario.swift */,
+				FBB80AA72CC6B91400745B0C /* Comentario.swift */,
 			);
 			name = Modelos;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB80AA82CC6B91400745B0C /* Comentario.swift in Sources */,
 				FBB39EBD2CB43D4A00F02F63 /* Clase_Vista_Celda.swift in Sources */,
 				FB03EB542CB6D78F00C1E8F5 /* POST.swift in Sources */,
 				FBF3AFD32CB979CE00D5B680 /* ControladorPantalladelPost.swift in Sources */,
@@ -329,6 +336,7 @@
 				FBF3AFD92CB9833C00D5B680 /* mod_navegador_principal.swift in Sources */,
 				FBF3AFDB2CB9850F00D5B680 /* EstiloCellViewController.swift in Sources */,
 				FBB39EB92CB4376800F02F63 /* ControladorPantallaPrincipal.swift in Sources */,
+				FBB80AA62CC6B34F00745B0C /* Usuario.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

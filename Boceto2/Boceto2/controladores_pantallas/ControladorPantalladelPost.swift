@@ -8,10 +8,19 @@
 import UIKit
 
 class ControladorPantallaDelPost: UIViewController {
+    
+    @IBOutlet weak var SeccionComentarios: UICollectionView!
+    @IBOutlet weak var CuerpoTXT: UILabel!
+    @IBOutlet weak var UsuarioTXT: UILabel!
+    @IBOutlet weak var TituloTXT: UILabel!
+    
+    
     let proveedor_de_publicaciones = ProveedorDePublicaciones.autoreferencia
     
     public var id_publicacion: Int?
     private var publicacion: Post?
+    private var usuario: Usuario?
+    private var lista_comentarios : [Comentario] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,16 +36,32 @@ class ControladorPantallaDelPost: UIViewController {
     }
     
     func realizar_descarga_de_informacion(){
-        proveedor_de_publicaciones.obtener_publicaicon(id: self.id_publicacion ?? -1, que_hacer_al_recibir: {
-            [weak self] (Post) in self?.publicacion = Post
-            DispatchQueue.main.async {
-                self?.dibujar_publicacion()
-            }
-        })
+        if self.publicacion == nil{
+            proveedor_de_publicaciones.obtener_publicaicon(id: self.id_publicacion ?? -1, que_hacer_al_recibir: {
+                [weak self] (Post) in self?.publicacion = Post
+                DispatchQueue.main.async {
+                    self?.dibujar_publicacion()
+                }
+            })
+        }
+        
+        else if self.publicacion != nil {
+            proveedor_de_publicaciones.obtener_usuario(id: publicacion!.userId, que_hacer_al_recibir: {
+                [weak self] (usuario) in self?.usuario = usuario
+                DispatchQueue.main.async {
+                    self?.dibujar_publicacion()
+                }
+            })
+        }
+        
     }
 
     func dibujar_publicacion(){
-        print(publicacion?.body)
+        guard let publicacion_actual = self.publicacion else{
+            return
+        }
+        TituloTXT.text = publicacion_actual.title
+        CuerpoTXT.text = publicacion_actual.body
     }
     /*
     // MARK: - Navigation

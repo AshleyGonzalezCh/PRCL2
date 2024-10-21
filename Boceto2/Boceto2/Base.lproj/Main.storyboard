@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JI9-9x-kjO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H4x-fW-B3g">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -97,22 +97,93 @@
         <!--Controlador Pantalla Del Post-->
         <scene sceneID="uHy-rZ-POC">
             <objects>
-                <viewController storyboardIdentifier="pantalla_de_publicacion" id="gPH-Fw-Y9j" customClass="ControladorPantallaDelPost" customModule="Boceto2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PantallaPublicacion" id="gPH-Fw-Y9j" customClass="ControladorPantallaDelPost" customModule="Boceto2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="llk-xZ-DOr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" sizingRule="oversize" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdS-lZ-cEk" userLabel="TitleText">
+                                <rect key="frame" x="20" y="90" width="353" height="36"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.41769213620000001" blue="0.49681903049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugP-3e-wSI" userLabel="UserName Text">
+                                <rect key="frame" x="20" y="176" width="353" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99607674390000001" green="0.98830867639999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ET-7X-Nxn" userLabel="Body text">
+                                <rect key="frame" x="20" y="140" width="353" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99607674390000001" green="0.98830867639999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mbX-mB-oRC">
+                                <rect key="frame" x="16" y="348" width="350" height="396"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J0G-VI-Prg">
+                                    <size key="itemSize" width="126" height="121"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kuK-ry-BqG">
+                                        <rect key="frame" x="0.0" y="0.0" width="126" height="121"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="u6Y-Td-e5Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="126" height="121"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="126" height="121"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="JI9-9x-kjO" id="xjl-KG-Uwc"/>
+                                    <outlet property="delegate" destination="JI9-9x-kjO" id="ko9-zO-e35"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3oq-Eo-cJb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="labelColor"/>
+                        <constraints>
+                            <constraint firstItem="3ET-7X-Nxn" firstAttribute="leading" secondItem="3oq-Eo-cJb" secondAttribute="leading" constant="20" id="F1t-tw-qH7"/>
+                            <constraint firstItem="fdS-lZ-cEk" firstAttribute="top" secondItem="3oq-Eo-cJb" secondAttribute="top" constant="31" id="MVn-bW-Mdf"/>
+                            <constraint firstItem="3ET-7X-Nxn" firstAttribute="top" secondItem="fdS-lZ-cEk" secondAttribute="bottom" constant="14" id="S90-Ct-08Y"/>
+                            <constraint firstItem="ugP-3e-wSI" firstAttribute="leading" secondItem="3oq-Eo-cJb" secondAttribute="leading" constant="20" id="UJG-yH-kh6"/>
+                            <constraint firstItem="ugP-3e-wSI" firstAttribute="top" secondItem="3ET-7X-Nxn" secondAttribute="bottom" constant="15.666666666666657" id="YL1-kf-Wfu"/>
+                            <constraint firstItem="3oq-Eo-cJb" firstAttribute="trailing" secondItem="ugP-3e-wSI" secondAttribute="trailing" constant="20" id="a67-2x-M3a"/>
+                            <constraint firstItem="3oq-Eo-cJb" firstAttribute="trailing" secondItem="3ET-7X-Nxn" secondAttribute="trailing" constant="20" id="sSy-5O-alY"/>
+                            <constraint firstItem="fdS-lZ-cEk" firstAttribute="leading" secondItem="3oq-Eo-cJb" secondAttribute="leading" constant="20" id="w6s-Ra-K6b"/>
+                            <constraint firstItem="3oq-Eo-cJb" firstAttribute="trailing" secondItem="fdS-lZ-cEk" secondAttribute="trailing" constant="20" id="zd0-AY-5YL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="CuerpoTXT" destination="ugP-3e-wSI" id="Ocw-OA-nHk"/>
+                        <outlet property="SeccionComentarios" destination="mbX-mB-oRC" id="wwK-ut-ka6"/>
+                        <outlet property="TituloTXT" destination="fdS-lZ-cEk" id="tMn-C5-t6e"/>
+                        <outlet property="UsuarioTXT" destination="3ET-7X-Nxn" id="Yvp-lM-hkH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gw-Pf-3pQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="120"/>
+            <point key="canvasLocation" x="1251.145038167939" y="119.71830985915494"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
