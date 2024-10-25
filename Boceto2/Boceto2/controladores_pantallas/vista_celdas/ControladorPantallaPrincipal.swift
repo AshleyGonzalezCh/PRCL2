@@ -7,9 +7,11 @@
 
 import UIKit
 
-private let ID_celda = "Celda_Pantalla_Principal"
+
 
 class ControladorPantallaPrincipal: UICollectionViewController {
+    
+    private let ID_celda = "cpp"
     private var lista_de_publicaciones: [Post] = []
     let proveedor_de_publicaciones = ProveedorDePublicaciones.autoreferencia
     

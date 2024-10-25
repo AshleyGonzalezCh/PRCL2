@@ -8,7 +8,8 @@
 import UIKit
 
 class Clase_Vista_Celda: UICollectionViewCell {
-    @IBOutlet weak var CuerpoText: UILabel!
     @IBOutlet weak var EtiquetaText: UILabel!
+    
+    @IBOutlet weak var CuerpoText: UILabel!
     
 }

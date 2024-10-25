@@ -19,80 +19,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="JI9-9x-kjO" kind="relationship" relationship="rootViewController" id="yKa-qd-pR4"/>
+                        <segue destination="lyX-mu-H9D" kind="relationship" relationship="rootViewController" id="wpc-0i-AQj"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJP-d1-Kf9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-178" y="120"/>
-        </scene>
-        <!--Controlador Pantalla Principal-->
-        <scene sceneID="oNB-Th-ldS">
-            <objects>
-                <collectionViewController id="JI9-9x-kjO" customClass="ControladorPantallaPrincipal" customModule="Boceto2" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="N0f-jV-Pay">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="esq-wz-SRe">
-                            <size key="itemSize" width="390" height="306"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Celda_Pantalla_Principal" id="3xa-MU-fum" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
-                                <rect key="frame" x="1.6666666666666667" y="0.0" width="390" height="306"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="CJF-3G-WsP" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="306"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" sizingRule="oversize" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWJ-Vh-WWB">
-                                            <rect key="frame" x="20" y="32" width="350" height="36"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                            <color key="textColor" red="1" green="0.41769213616555079" blue="0.49681903046647435" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZP7-Ud-deD" userLabel="Cuerpo Text">
-                                            <rect key="frame" x="20" y="78" width="350" height="100"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="100" id="cXe-zI-7dM"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.99607674390000001" green="0.98830867639999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.22720901177997391" green="0.23135470360824739" blue="0.22419314012532468" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="ZP7-Ud-deD" secondAttribute="trailing" constant="20" id="8fa-Iq-yrA"/>
-                                        <constraint firstItem="ZP7-Ud-deD" firstAttribute="leading" secondItem="CJF-3G-WsP" secondAttribute="leading" constant="20" id="8yo-a4-UhU"/>
-                                        <constraint firstAttribute="trailing" secondItem="bWJ-Vh-WWB" secondAttribute="trailing" constant="20" id="XKJ-NM-LbW"/>
-                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="leading" secondItem="CJF-3G-WsP" secondAttribute="leading" constant="20" id="bvt-Ke-CEb"/>
-                                        <constraint firstItem="bWJ-Vh-WWB" firstAttribute="top" secondItem="CJF-3G-WsP" secondAttribute="top" constant="32" id="uV3-Wn-cKM"/>
-                                        <constraint firstItem="ZP7-Ud-deD" firstAttribute="top" secondItem="bWJ-Vh-WWB" secondAttribute="bottom" constant="10" id="z4u-Pe-eI7"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
-                                <color key="backgroundColor" red="0.29211825940000002" green="1" blue="0.31473356730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="customSize" width="390" height="306"/>
-                                <connections>
-                                    <outlet property="CuerpoText" destination="ZP7-Ud-deD" id="iSx-pZ-97e"/>
-                                    <outlet property="EtiquetaText" destination="bWJ-Vh-WWB" id="W2s-HY-OA6"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="JI9-9x-kjO" id="QoF-IE-g7d"/>
-                            <outlet property="delegate" destination="JI9-9x-kjO" id="xn1-MU-FJD"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="lqe-N7-JUp"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kBa-Xk-RJ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="533.58778625954199" y="119.71830985915494"/>
+            <point key="canvasLocation" x="-259" y="120"/>
         </scene>
         <!--Controlador Pantalla Del Post-->
         <scene sceneID="uHy-rZ-POC">
@@ -143,10 +75,6 @@
                                         <size key="customSize" width="126" height="121"/>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="JI9-9x-kjO" id="xjl-KG-Uwc"/>
-                                    <outlet property="delegate" destination="JI9-9x-kjO" id="ko9-zO-e35"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3oq-Eo-cJb"/>
@@ -173,6 +101,74 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gw-Pf-3pQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1251.145038167939" y="119.71830985915494"/>
+        </scene>
+        <!--Controlador Pantalla Principal-->
+        <scene sceneID="vSY-Nj-qdX">
+            <objects>
+                <collectionViewController id="lyX-mu-H9D" customClass="ControladorPantallaPrincipal" customModule="Boceto2" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OzC-72-oQP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.099604159469999995" green="0.10142155279999999" blue="0.098282058029999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u0k-yb-mrB">
+                            <size key="itemSize" width="393" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cpp" id="dfQ-Q4-1Yc" userLabel="Celda_Pantalla_Principal" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S80-on-LDp">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-Ah-frG" userLabel="EtiquetaText">
+                                            <rect key="frame" x="10" y="15" width="373" height="41"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Titulo">
+                                                    <attributes>
+                                                        <font key="NSFont" size="30" name="AvenirNext-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cuerpo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2A-Eg-rOa" userLabel="CuerpoText">
+                                            <rect key="frame" x="8" y="73" width="373" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="1" green="0.41769213620000001" blue="0.49681903049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="T2A-Eg-rOa" firstAttribute="leading" secondItem="S80-on-LDp" secondAttribute="leading" constant="10" id="1zU-YQ-Ek7"/>
+                                        <constraint firstItem="T2A-Eg-rOa" firstAttribute="top" secondItem="Wd9-Ah-frG" secondAttribute="bottom" constant="17" id="a8J-WO-KFC"/>
+                                        <constraint firstItem="Wd9-Ah-frG" firstAttribute="leading" secondItem="S80-on-LDp" secondAttribute="leading" constant="10" id="qjl-mR-Qoe"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wd9-Ah-frG" secondAttribute="trailing" constant="10" id="sSn-7d-c3c"/>
+                                        <constraint firstAttribute="trailing" secondItem="T2A-Eg-rOa" secondAttribute="trailing" constant="10" id="wY9-z5-Uue"/>
+                                        <constraint firstItem="Wd9-Ah-frG" firstAttribute="top" secondItem="S80-on-LDp" secondAttribute="top" constant="15" id="zJP-hB-c7U"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="393" height="128"/>
+                                <connections>
+                                    <outlet property="CuerpoText" destination="T2A-Eg-rOa" id="TGe-Pb-lTj"/>
+                                    <outlet property="EtiquetaText" destination="Wd9-Ah-frG" id="8pR-BN-9oc"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="lyX-mu-H9D" id="r04-ME-KAS"/>
+                            <outlet property="delegate" destination="lyX-mu-H9D" id="W8V-8k-gIR"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="reI-ds-92R"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x9M-ck-9DS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="539.69465648854964" y="-67.605633802816911"/>
         </scene>
     </scenes>
     <resources>

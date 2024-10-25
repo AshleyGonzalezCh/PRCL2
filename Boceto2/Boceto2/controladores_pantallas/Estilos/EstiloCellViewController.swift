@@ -10,8 +10,8 @@ extension ControladorPantallaPrincipal: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var ancho = self.collectionView.frame.width
         var largo = self.collectionView.frame.height
-        //ancho = ancho/2
-        largo = largo / 3
+        //ancho = ancho / 4
+        largo = largo / 4
         
         return CGSize(width: ancho, height: largo)
     }
