@@ -12,4 +12,7 @@ class Clase_Vista_Celda: UICollectionViewCell {
     
     @IBOutlet weak var CuerpoText: UILabel!
     
+    @IBOutlet weak var Comentarios: UILabel!
+    @IBOutlet weak var UsernameComentario: UILabel!
+    @IBOutlet weak var Email: UILabel!
 }
