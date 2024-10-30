@@ -58,7 +58,7 @@
                                 <rect key="frame" x="16" y="348" width="350" height="396"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="0.41769213620000001" blue="0.49681903049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J0G-VI-Prg">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J0G-VI-Prg">
                                     <size key="itemSize" width="327" height="307"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -178,12 +178,12 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cpp" id="dfQ-Q4-1Yc" userLabel="Celda_Pantalla_Principal" customClass="Clase_Vista_Celda" customModule="Boceto2" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S80-on-LDp">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-Ah-frG" userLabel="EtiquetaText">
-                                            <rect key="frame" x="10" y="15" width="373" height="41"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-Ah-frG" userLabel="EtiquetaText">
+                                            <rect key="frame" x="10" y="15" width="83.666666666666671" height="41"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Titulo">
                                                     <attributes>
@@ -193,23 +193,23 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cuerpo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2A-Eg-rOa" userLabel="CuerpoText">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cuerpo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2A-Eg-rOa" userLabel="CuerpoText">
                                             <rect key="frame" x="8" y="73" width="373" height="20.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="1" green="0.41769213620000001" blue="0.49681903049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="T2A-Eg-rOa" firstAttribute="leading" secondItem="S80-on-LDp" secondAttribute="leading" constant="10" id="1zU-YQ-Ek7"/>
-                                        <constraint firstItem="T2A-Eg-rOa" firstAttribute="top" secondItem="Wd9-Ah-frG" secondAttribute="bottom" constant="17" id="a8J-WO-KFC"/>
-                                        <constraint firstItem="Wd9-Ah-frG" firstAttribute="leading" secondItem="S80-on-LDp" secondAttribute="leading" constant="10" id="qjl-mR-Qoe"/>
-                                        <constraint firstAttribute="trailing" secondItem="Wd9-Ah-frG" secondAttribute="trailing" constant="10" id="sSn-7d-c3c"/>
-                                        <constraint firstAttribute="trailing" secondItem="T2A-Eg-rOa" secondAttribute="trailing" constant="10" id="wY9-z5-Uue"/>
-                                        <constraint firstItem="Wd9-Ah-frG" firstAttribute="top" secondItem="S80-on-LDp" secondAttribute="top" constant="15" id="zJP-hB-c7U"/>
-                                    </constraints>
-                                </collectionViewCellContentView>
+                                </view>
+                                <color key="backgroundColor" red="1" green="0.41769213620000001" blue="0.49681903049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="T2A-Eg-rOa" firstAttribute="leading" secondItem="dfQ-Q4-1Yc" secondAttribute="leading" constant="10" id="1zU-YQ-Ek7"/>
+                                    <constraint firstItem="T2A-Eg-rOa" firstAttribute="top" secondItem="Wd9-Ah-frG" secondAttribute="bottom" constant="17" id="a8J-WO-KFC"/>
+                                    <constraint firstItem="Wd9-Ah-frG" firstAttribute="leading" secondItem="dfQ-Q4-1Yc" secondAttribute="leading" constant="10" id="qjl-mR-Qoe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wd9-Ah-frG" secondAttribute="trailing" constant="10" id="sSn-7d-c3c"/>
+                                    <constraint firstAttribute="trailing" secondItem="T2A-Eg-rOa" secondAttribute="trailing" constant="10" id="wY9-z5-Uue"/>
+                                    <constraint firstItem="Wd9-Ah-frG" firstAttribute="top" secondItem="dfQ-Q4-1Yc" secondAttribute="top" constant="15" id="zJP-hB-c7U"/>
+                                </constraints>
                                 <size key="customSize" width="393" height="128"/>
                                 <connections>
                                     <outlet property="CuerpoText" destination="T2A-Eg-rOa" id="TGe-Pb-lTj"/>

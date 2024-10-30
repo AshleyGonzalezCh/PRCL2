@@ -34,6 +34,7 @@ class ControladorPantallaDelPost: UIViewController, UICollectionViewDataSource {
                 controlador_de_navegacion?.activar_navigation_bar(actviar: true)
         
         SeccionComentarios.dataSource = self
+        // SeccionComentarios.delegate = self
         realizar_descarga_de_informacion()
     }
     
