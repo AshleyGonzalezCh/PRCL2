@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2D10152CE277AA00F68207 /* WorksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2D10142CE277AA00F68207 /* WorksCollectionCell.swift */; };
 		FB3656332CD935FF0053D590 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656322CD935FF0053D590 /* AppDelegate.swift */; };
 		FB3656352CD935FF0053D590 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656342CD935FF0053D590 /* SceneDelegate.swift */; };
 		FB3656372CD935FF0053D590 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656362CD935FF0053D590 /* ViewController.swift */; };
@@ -22,7 +23,6 @@
 		FBED68272CDE7EA500C0FDAA /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68262CDE7EA500C0FDAA /* Network.swift */; };
 		FBED682B2CDE7F1F00C0FDAA /* SearchVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED682A2CDE7F1F00C0FDAA /* SearchVM.swift */; };
 		FBED682D2CDE80E000C0FDAA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED682C2CDE80E000C0FDAA /* SearchViewController.swift */; };
-		FBED682F2CDE81A700C0FDAA /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED682E2CDE81A700C0FDAA /* ResultViewModel.swift */; };
 		FBED68312CDE81C300C0FDAA /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68302CDE81C300C0FDAA /* ResultsViewController.swift */; };
 		FBED68332CDE821400C0FDAA /* WorkDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68322CDE821400C0FDAA /* WorkDetailViewModel.swift */; };
 		FBED68352CDE827500C0FDAA /* WorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68342CDE827500C0FDAA /* WorkDetailViewController.swift */; };
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB2D10142CE277AA00F68207 /* WorksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorksCollectionCell.swift; sourceTree = "<group>"; };
 		FB36562F2CD935FF0053D590 /* PF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3656322CD935FF0053D590 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB3656342CD935FF0053D590 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		FBED68262CDE7EA500C0FDAA /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		FBED682A2CDE7F1F00C0FDAA /* SearchVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVM.swift; sourceTree = "<group>"; };
 		FBED682C2CDE80E000C0FDAA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		FBED682E2CDE81A700C0FDAA /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		FBED68302CDE81C300C0FDAA /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		FBED68322CDE821400C0FDAA /* WorkDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailViewModel.swift; sourceTree = "<group>"; };
 		FBED68342CDE827500C0FDAA /* WorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailViewController.swift; sourceTree = "<group>"; };
@@ -173,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				FBED682A2CDE7F1F00C0FDAA /* SearchVM.swift */,
-				FBED682E2CDE81A700C0FDAA /* ResultViewModel.swift */,
 				FBED68322CDE821400C0FDAA /* WorkDetailViewModel.swift */,
 			);
 			path = ViewModels;
@@ -185,6 +184,7 @@
 				FBED682C2CDE80E000C0FDAA /* SearchViewController.swift */,
 				FBED68302CDE81C300C0FDAA /* ResultsViewController.swift */,
 				FBED68342CDE827500C0FDAA /* WorkDetailViewController.swift */,
+				FB2D10142CE277AA00F68207 /* WorksCollectionCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -324,13 +324,13 @@
 				FB3656372CD935FF0053D590 /* ViewController.swift in Sources */,
 				FBED68352CDE827500C0FDAA /* WorkDetailViewController.swift in Sources */,
 				FBED68332CDE821400C0FDAA /* WorkDetailViewModel.swift in Sources */,
-				FBED682F2CDE81A700C0FDAA /* ResultViewModel.swift in Sources */,
 				FBED68232CDE776600C0FDAA /* Chapter.swift in Sources */,
 				FBED682B2CDE7F1F00C0FDAA /* SearchVM.swift in Sources */,
 				FBED682D2CDE80E000C0FDAA /* SearchViewController.swift in Sources */,
 				FB3656332CD935FF0053D590 /* AppDelegate.swift in Sources */,
 				FBED68252CDE77AE00C0FDAA /* User.swift in Sources */,
 				FBED68212CDE765F00C0FDAA /* Works.swift in Sources */,
+				FB2D10152CE277AA00F68207 /* WorksCollectionCell.swift in Sources */,
 				FBED68272CDE7EA500C0FDAA /* Network.swift in Sources */,
 				FB3656352CD935FF0053D590 /* SceneDelegate.swift in Sources */,
 			);

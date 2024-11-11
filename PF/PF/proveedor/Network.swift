@@ -2,7 +2,7 @@ import Foundation
  
 class NetworkService {
     static let shared = NetworkService()
-    private let baseURL = "http://tu-api-url"  // Cambia esta URL a la de tu API
+    private let baseURL = "http://161.97.164.147:8000"  // Cambia esta URL a la de tu API
  
     func searchWorks(query: String, completion: @escaping ([Work]?) -> Void) {
         let urlString = "\(baseURL)/search?any_field=\(query)"

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
  
 class SearchViewModel {
 
@@ -15,9 +16,10 @@ class SearchViewModel {
 
     func searchWorks(author: String, completion: @escaping (Result<Void, Error>) -> Void) {
 
-        guard let url = URL(string: "http://127.0.0.1:8000/search?author=\(author)") else {
+        guard let url = URL(string: "http://161.97.164.147:8000/search?author=\(author)") else {
 
-            completion(.failure(NetworkError.invalidURL))
+            //completion(.failure(CFNetworkErrors.invalidur))
+            print("Url inválida")
 
             return
 
@@ -37,7 +39,8 @@ class SearchViewModel {
  
             guard let data = data else {
 
-                completion(.failure(NetworkError.noData))
+                //completion(.failure(NetworkError.noData))
+                print("No data")
 
                 return
 
@@ -49,9 +52,9 @@ class SearchViewModel {
 
                 let decoder = JSONDecoder()
 
-                let response = try decoder.decode(SearchResponse.self, from: data)
+                let response = try decoder.decode([Work].self, from: data)
 
-                self.searchResults = response.results
+                self.searchResults = response
 
                 completion(.success(()))
 
