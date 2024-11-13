@@ -5,7 +5,7 @@ class NetworkService {
     private let baseURL = "http://161.97.164.147:8000"  // Cambia esta URL a la de tu API
  
     func searchWorks(query: String, completion: @escaping ([Work]?) -> Void) {
-        let urlString = "\(baseURL)/search?any_field=\(query)"
+        let urlString = "\(baseURL)/search?author=\(query)"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
