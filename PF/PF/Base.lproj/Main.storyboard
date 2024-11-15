@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="prominent" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vL-FN-JfN">
+                            <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="prominent" text="DeviantsNLiars" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vL-FN-JfN">
                                 <rect key="frame" x="0.0" y="455" width="393" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.41769213620000001" blue="0.49681903049999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -53,7 +53,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="URT-AZ-T6R"/>
-                                    <segue destination="JAK-DH-mCM" kind="show" identifier="showWorkDetail" id="5Ct-TS-6Bc"/>
+                                    <segue destination="JAK-DH-mCM" kind="show" identifier="resultados" id="5Ct-TS-6Bc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -72,7 +72,7 @@
         <!--Results View Controller-->
         <scene sceneID="SvJ-5L-9PM">
             <objects>
-                <viewController id="JAK-DH-mCM" customClass="ResultsViewController" customModule="PF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showResults" id="JAK-DH-mCM" customClass="ResultsViewController" customModule="PF" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6gQ-ex-5cx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,7 +101,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lenguaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM0-Lc-1pY" userLabel="Autor">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lenguaje" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QM0-Lc-1pY">
                                                     <rect key="frame" x="8" y="67.666666666666671" width="69" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -137,7 +137,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="363" height="128"/>
                                         <connections>
-                                            <outlet property="autor" destination="QM0-Lc-1pY" id="Wvs-M2-5ql"/>
+                                            <outlet property="lenguaje" destination="QM0-Lc-1pY" id="kZT-yD-rQ0"/>
                                             <outlet property="summary" destination="JVX-aS-8Al" id="QDT-f5-pcL"/>
                                             <outlet property="titulo" destination="EfC-M0-mwn" id="FER-Ye-flP"/>
                                             <outlet property="word_count" destination="XHO-J9-M2f" id="Wss-mI-hGk"/>
@@ -156,12 +156,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQw-2d-mGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="910.68702290076328" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="990" y="4"/>
         </scene>
         <!--Work Detail View Controller-->
         <scene sceneID="IPg-Tn-eje">
             <objects>
-                <viewController id="Wle-Hk-zoM" customClass="WorkDetailViewController" customModule="PF" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="obra" id="Wle-Hk-zoM" customClass="WorkDetailViewController" customModule="PF" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jt4-rU-3g9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +276,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="7dJ-7E-boO"/>
                     <connections>
-                        <outlet property="tableView" destination="bj0-Ff-D1l" id="S2X-wA-a3v"/>
+                        <outlet property="collectionView" destination="bj0-Ff-D1l" id="vXA-mj-CnR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jQP-UU-Jl1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

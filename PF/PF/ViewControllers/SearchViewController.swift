@@ -21,14 +21,18 @@ class SearchViewController: UIViewController {
         viewModel.searchWorks(author: author) { [weak self] result in
             switch result {
             case .success(_):
-                self?.performSegue(withIdentifier: "showResults", sender: nil)
+                // Asegúrate de realizar el segue en el hilo principal
+                DispatchQueue.main.async {
+                    self?.performSegue(withIdentifier: "resultados", sender: nil)
+                }
             case .failure(let error):
                 print("Error: \(error)")
             }
         }
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showResults",
+        if segue.identifier == "resultados",
            let resultsVC = segue.destination as? ResultsViewController {
             resultsVC.viewModel = viewModel
         }

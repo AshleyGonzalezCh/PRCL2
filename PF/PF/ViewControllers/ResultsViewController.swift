@@ -8,9 +8,8 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
-
     var viewModel: SearchViewModel!
 
     override func viewDidLoad() {
@@ -19,19 +18,39 @@ class ResultsViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
+
+    func someBackgroundTask() {
+        // Simulamos una operación en segundo plano
+        DispatchQueue.global(qos: .background).async {
+            // Código de operación en segundo plano (por ejemplo, una llamada a una API)
+            
+            DispatchQueue.main.async {
+                // Asegúrate de llamar al segue en el hilo principal
+                self.performSegue(withIdentifier: "resultados", sender: nil)
+            }
+        }
+    }
+
+
 }
 
 extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let viewModel = viewModel else {
+            return 0
+        }
         return viewModel.searchResults.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let viewModel = viewModel else {
+            return UICollectionViewCell()  // Si viewModel es nil, devolvemos una celda vacía
+        }
+
         let work = viewModel.searchResults[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WorkCell", for: indexPath) as! WorksCollectionCell
 
-        // Configura la celda con los datos de la obra
         cell.titulo?.text = work.title
         cell.lenguaje?.text = work.language
         cell.summary?.text = work.summary
@@ -39,22 +58,28 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         return cell
     }
 
-    // Usamos `didSelectItemAt` en lugar de `didSelectRowAt`
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let work = viewModel.searchResults[indexPath.row]
-        // Llamamos al segue para mostrar los detalles de la obra
-        performSegue(withIdentifier: "showWorkDetail", sender: work)
-    }
+        guard let viewModel = viewModel else {
+            return
+        }
 
-    // Preparar el segue con los datos de la obra seleccionada
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showWorkDetail", let resultVC = segue.destination as? ResultsViewController {
-            /*if let work = sender as? Work {
-                resultVC.
-            }*/
+        let work = viewModel.searchResults[indexPath.row]
+ 
+
+        // Llamamos al método para navegar a la vista de detalles de la obra
+        DispatchQueue.main.async {
+            // Instanciar el controlador de vista de detalles
+            if let pantallaDePublicacion = self.storyboard?.instantiateViewController(withIdentifier: "obra") as? WorkDetailViewController {
+                // Asignar el objeto `work` al controlador de detalles
+                print("--------")
+                print("\(work)")
+                print("\(type(of: work))")
+                print("--------")
+                pantallaDePublicacion.work = work
+                
+                // Empujar el controlador de vista en el stack de navegación
+                self.navigationController?.pushViewController(pantallaDePublicacion, animated: true)
+            }
         }
     }
 }
-
-
- 
