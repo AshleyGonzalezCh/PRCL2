@@ -22,8 +22,8 @@ class NetworkService {
         }.resume()
     }
  
-    func fetchWorkDetails(workID: Int, completion: @escaping (Work?) -> Void) {
-        let urlString = "\(baseURL)/work/\(workID)"
+    func fetchWorkDetails(workID: Int, completion: @escaping ([Chapter]?) -> Void) {
+        let urlString = "\(baseURL)/work/\(workID)/chapters"
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data, error == nil else {
@@ -31,8 +31,8 @@ class NetworkService {
                 return
             }
             do {
-                let work = try JSONDecoder().decode(Work.self, from: data)
-                completion(work)
+                let capitulos = try JSONDecoder().decode([Chapter].self, from: data)
+                completion(capitulos)
             } catch {
                 print("Error decoding work details: \(error)")
                 completion(nil)

@@ -54,6 +54,7 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.titulo?.text = work.title
         cell.lenguaje?.text = work.language
         cell.summary?.text = work.summary
+        cell.status?.text = work.status
 
         return cell
     }
@@ -69,12 +70,7 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         // Llamamos al método para navegar a la vista de detalles de la obra
         DispatchQueue.main.async {
             // Instanciar el controlador de vista de detalles
-            if let pantallaDePublicacion = self.storyboard?.instantiateViewController(withIdentifier: "obra") as? WorkDetailViewController {
-                // Asignar el objeto `work` al controlador de detalles
-                print("--------")
-                print("\(work)")
-                print("\(type(of: work))")
-                print("--------")
+            if let pantallaDePublicacion = self.storyboard?.instantiateViewController(withIdentifier: "PantallaPublicacion") as? WorkDetailViewController {
                 pantallaDePublicacion.work = work
                 
                 // Empujar el controlador de vista en el stack de navegación

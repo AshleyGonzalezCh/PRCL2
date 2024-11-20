@@ -18,7 +18,7 @@ class SearchViewController: UIViewController {
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         guard let author = searchBar.text, !author.isEmpty else { return }
         // Llama al ViewModel para hacer la búsqueda solo por autor
-        viewModel.searchWorks(author: author) { [weak self] result in
+        viewModel.searchWorks(query: author) { [weak self] result in
             switch result {
             case .success(_):
                 // Asegúrate de realizar el segue en el hilo principal

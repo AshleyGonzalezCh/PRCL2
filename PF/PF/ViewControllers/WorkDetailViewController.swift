@@ -13,52 +13,74 @@ class WorkDetailViewController: UIViewController {
     var work: Work?
     var viewModel: WorkDetailViewModel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        viewModel = WorkDetailViewModel()
-        viewModel.work = work
-        viewModel.loadChapters()
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            print("--------")
+            print("\(work?.chapters)")
+            print("\(type(of: work))")
+            print("--------")
+            
+            
+            viewModel = WorkDetailViewModel()
+            viewModel.work = work
+            viewModel.loadChapters(){
+                [weak self] resultado in
+                switch(resultado){
+                case .success(_):
+                    DispatchQueue.main.async {
+                        self?.work?.chapters = self?.viewModel.chapters
+                        self?.collectionView.reloadData()
+                    }
+                    
+                
+                case .failure(_):
+                    print("Error")
+                }
+            }
+            
 
-        collectionView.delegate = self
-        collectionView.dataSource = self
-
-        // Si estás usando un `UICollectionViewCell` personalizado, registra la celda aquí.
-        // collectionView.register(UINib(nibName: "YourCellNibName", bundle: nil), forCellWithReuseIdentifier: "ChapterCell")
-    }
-}
-
-extension WorkDetailViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(viewModel.chapters)
-        guard let capitulos = viewModel.chapters else {
-            return 0
+            // Configurar collectionView
+            collectionView.delegate = self
+            collectionView.dataSource = self
         }
-        return capitulos.count
     }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let chapter = viewModel.chapters![indexPath.row]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ChapterCell", for: indexPath)
-        
-        // Si usas una celda personalizada, asegúrate de castear la celda correctamente.
-        // Por ejemplo:
-        // let customCell = cell as! YourCustomCell
-        // customCell.configure(with: chapter)
+    extension WorkDetailViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-        cell.contentView.subviews.compactMap { $0 as? UILabel }.first?.text = chapter.title
-        return cell
-    }
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return work?.chapters?.count ?? 0
+        }
 
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let chapter = viewModel.chapters![indexPath.row]
-        // Aquí podrías agregar la lógica para manejar la selección del capítulo.
-    }
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let chapter = work?.chapters?[indexPath.row]
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cc", for: indexPath) as! WorksCollectionCell
 
-    // Opcional: Configurar tamaño de celdas
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        // Ajusta el tamaño según tu diseño
-        return CGSize(width: collectionView.frame.width / 2 - 10, height: 100)
-    }
+            if indexPath.row == 0 {
+                // La primera celda será para mostrar los detalles del trabajo
+                cell.C_Titulo.text = chapter!.title
+                cell.C_Summary.text = chapter!.summary
+                cell.C_Lenguaje.text = self.work?.language
+            }
+                else {
+                // Las celdas restantes mostrarán los capítulos
+                    cell.C_CapTitle.text = chapter?.title
+                    cell.C_NumCap.text = "Chapter \(String(describing: chapter?.number))"
+                    cell.C_CapSummary.text = chapter?.summary ?? "No summary available"
+                    
+                    print("--------")
+                    print("\(String(describing: work))")
+                    print("\(type(of: work))")
+                    print("--------")
+            }
+            
+            return cell
+        }
+
+
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            // Ajusta el tamaño según tu diseño
+            return CGSize(width: collectionView.frame.width / 2 - 10, height: 100)
+        }
 }
 

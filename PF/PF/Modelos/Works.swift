@@ -7,18 +7,20 @@
 
 import Foundation
 struct Chapter: Codable {
-    var id: Int
+    var id: Int?
     var title: String
     var number: Int
     var summary: String?
-    var words: String
+    var words: Int
     var url: String
+    var content: String
 }
  
 struct Work: Codable {
     var id: Int
     var title: String
     //var author: String
+    var username: String?
     var summary: String?
     var language: String
     var status: String
@@ -33,6 +35,7 @@ struct Work: Codable {
         case status
         case url
         case chapters
+        case username
     }
 }
 

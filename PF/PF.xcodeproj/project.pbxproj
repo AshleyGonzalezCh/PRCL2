@@ -17,6 +17,7 @@
 		FB36564A2CD935FF0053D590 /* PFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656492CD935FF0053D590 /* PFTests.swift */; };
 		FB3656542CD935FF0053D590 /* PFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656532CD935FF0053D590 /* PFUITests.swift */; };
 		FB3656562CD935FF0053D590 /* PFUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656552CD935FF0053D590 /* PFUITestsLaunchTests.swift */; };
+		FBAF92482CED330400D84A26 /* WorkCell_Estilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF92472CED330400D84A26 /* WorkCell_Estilo.swift */; };
 		FBED68212CDE765F00C0FDAA /* Works.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68202CDE765F00C0FDAA /* Works.swift */; };
 		FBED68232CDE776600C0FDAA /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68222CDE776600C0FDAA /* Chapter.swift */; };
 		FBED68252CDE77AE00C0FDAA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68242CDE77AE00C0FDAA /* User.swift */; };
@@ -60,6 +61,7 @@
 		FB36564F2CD935FF0053D590 /* PFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3656532CD935FF0053D590 /* PFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFUITests.swift; sourceTree = "<group>"; };
 		FB3656552CD935FF0053D590 /* PFUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FBAF92472CED330400D84A26 /* WorkCell_Estilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCell_Estilo.swift; sourceTree = "<group>"; };
 		FBED68202CDE765F00C0FDAA /* Works.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Works.swift; sourceTree = "<group>"; };
 		FBED68222CDE776600C0FDAA /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		FBED68242CDE77AE00C0FDAA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 		FB3656312CD935FF0053D590 /* PF */ = {
 			isa = PBXGroup;
 			children = (
+				FBAF92462CED32E000D84A26 /* Estilo */,
 				FBED68292CDE7F0400C0FDAA /* ViewControllers */,
 				FBED68282CDE7EFC00C0FDAA /* ViewModels */,
 				FBED681F2CDE75F300C0FDAA /* proveedor */,
@@ -149,6 +152,14 @@
 				FB3656552CD935FF0053D590 /* PFUITestsLaunchTests.swift */,
 			);
 			path = PFUITests;
+			sourceTree = "<group>";
+		};
+		FBAF92462CED32E000D84A26 /* Estilo */ = {
+			isa = PBXGroup;
+			children = (
+				FBAF92472CED330400D84A26 /* WorkCell_Estilo.swift */,
+			);
+			path = Estilo;
 			sourceTree = "<group>";
 		};
 		FBED681E2CDE75E100C0FDAA /* Modelos */ = {
@@ -320,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBAF92482CED330400D84A26 /* WorkCell_Estilo.swift in Sources */,
 				FBED68312CDE81C300C0FDAA /* ResultsViewController.swift in Sources */,
 				FB3656372CD935FF0053D590 /* ViewController.swift in Sources */,
 				FBED68352CDE827500C0FDAA /* WorkDetailViewController.swift in Sources */,
