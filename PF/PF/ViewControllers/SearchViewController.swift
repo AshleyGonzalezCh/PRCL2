@@ -9,11 +9,23 @@ import UIKit
  
 class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var btn_buscar: UIButton!
     private let viewModel = SearchViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
+        
+        // Fondo negro
+        btn_buscar.backgroundColor = .black
+            
+            // Borde blanco
+        btn_buscar.layer.borderColor = UIColor.white.cgColor
+        btn_buscar.layer.borderWidth = 1.0
+
+            // Redondear bordes (opcional)
+        btn_buscar.layer.cornerRadius = 8.0 // Ajusta según tus necesidades
+        btn_buscar.clipsToBounds = true
     }
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         guard let author = searchBar.text, !author.isEmpty else { return }

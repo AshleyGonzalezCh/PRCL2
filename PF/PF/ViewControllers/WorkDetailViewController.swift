@@ -9,17 +9,17 @@ import UIKit
 
 class WorkDetailViewController: UIViewController {
 
+    @IBOutlet weak var ResumenObra: UILabel!
+    @IBOutlet weak var LenguajeObra: UILabel!
+    @IBOutlet weak var TituloObra: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var work: Work?
     var viewModel: WorkDetailViewModel!
 
         override func viewDidLoad() {
             super.viewDidLoad()
-            
-            print("--------")
-            print("\(work?.chapters)")
-            print("\(type(of: work))")
-            print("--------")
             
             
             viewModel = WorkDetailViewModel()
@@ -32,8 +32,6 @@ class WorkDetailViewController: UIViewController {
                         self?.work?.chapters = self?.viewModel.chapters
                         self?.collectionView.reloadData()
                     }
-                    
-                
                 case .failure(_):
                     print("Error")
                 }
@@ -43,6 +41,10 @@ class WorkDetailViewController: UIViewController {
             // Configurar collectionView
             collectionView.delegate = self
             collectionView.dataSource = self
+            
+            TituloObra.text = self.work?.title
+            LenguajeObra.text = self.work?.language
+            ResumenObra.text = self.work?.summary
         }
     }
 
@@ -56,31 +58,31 @@ class WorkDetailViewController: UIViewController {
             let chapter = work?.chapters?[indexPath.row]
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cc", for: indexPath) as! WorksCollectionCell
 
-            if indexPath.row == 0 {
-                // La primera celda será para mostrar los detalles del trabajo
-                cell.C_Titulo.text = chapter!.title
-                cell.C_Summary.text = chapter!.summary
-                cell.C_Lenguaje.text = self.work?.language
-            }
-                else {
-                // Las celdas restantes mostrarán los capítulos
-                    cell.C_CapTitle.text = chapter?.title
-                    cell.C_NumCap.text = "Chapter \(String(describing: chapter?.number))"
-                    cell.C_CapSummary.text = chapter?.summary ?? "No summary available"
-                    
-                    print("--------")
-                    print("\(String(describing: work))")
-                    print("\(type(of: work))")
-                    print("--------")
-            }
+            // Las celdas restantes mostrarán los capítulos
+            cell.C_CapTitle.text = chapter?.title
+            cell.C_NumCap.text = "Chapter \(String(describing: chapter?.number))"
+            cell.C_CapSummary.text = chapter?.summary ?? "No summary available"
             
             return cell
         }
 
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            // Obtener el capítulo seleccionado
+            guard let chapter = work?.chapters?[indexPath.row] else {
+                print("Error: No se pudo obtener el capítulo.")
+                return
+            }
 
-        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            // Ajusta el tamaño según tu diseño
-            return CGSize(width: collectionView.frame.width / 2 - 10, height: 100)
+            // Instanciar la vista de contenido del capítulo
+            if let chapterContentVC = storyboard?.instantiateViewController(withIdentifier: "content") as? ChapterContentViewController {
+                // Pasar el contenido del capítulo a la nueva vista
+                chapterContentVC.chapterTitle = chapter.title
+                chapterContentVC.workTitle = work?.title
+                chapterContentVC.chapterContent = chapter.content
+
+                // Navegar a la vista de contenido del capítulo
+                navigationController?.pushViewController(chapterContentVC, animated: true)
+            }
         }
 }
 

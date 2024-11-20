@@ -21,10 +21,6 @@ class WorksCollectionCell: UICollectionViewCell {
     @IBOutlet weak var C_NumCap: UILabel!
     @IBOutlet weak var C_CapSummary: UILabel!
     
-    @IBOutlet weak var C_Titulo: UILabel!
-    @IBOutlet weak var C_Summary: UILabel!
-    @IBOutlet weak var C_Lenguaje: UILabel!
-    
     
     
     

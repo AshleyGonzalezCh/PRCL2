@@ -17,6 +17,8 @@
 		FB36564A2CD935FF0053D590 /* PFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656492CD935FF0053D590 /* PFTests.swift */; };
 		FB3656542CD935FF0053D590 /* PFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656532CD935FF0053D590 /* PFUITests.swift */; };
 		FB3656562CD935FF0053D590 /* PFUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3656552CD935FF0053D590 /* PFUITestsLaunchTests.swift */; };
+		FBA87DE22CEE470B00EA048A /* ChapterContentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA87DE12CEE470B00EA048A /* ChapterContentVC.swift */; };
+		FBA87DE42CEE502200EA048A /* ChaptersCell_Estilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA87DE32CEE502200EA048A /* ChaptersCell_Estilo.swift */; };
 		FBAF92482CED330400D84A26 /* WorkCell_Estilo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAF92472CED330400D84A26 /* WorkCell_Estilo.swift */; };
 		FBED68212CDE765F00C0FDAA /* Works.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68202CDE765F00C0FDAA /* Works.swift */; };
 		FBED68232CDE776600C0FDAA /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBED68222CDE776600C0FDAA /* Chapter.swift */; };
@@ -61,6 +63,8 @@
 		FB36564F2CD935FF0053D590 /* PFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB3656532CD935FF0053D590 /* PFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFUITests.swift; sourceTree = "<group>"; };
 		FB3656552CD935FF0053D590 /* PFUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FBA87DE12CEE470B00EA048A /* ChapterContentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterContentVC.swift; sourceTree = "<group>"; };
+		FBA87DE32CEE502200EA048A /* ChaptersCell_Estilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersCell_Estilo.swift; sourceTree = "<group>"; };
 		FBAF92472CED330400D84A26 /* WorkCell_Estilo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCell_Estilo.swift; sourceTree = "<group>"; };
 		FBED68202CDE765F00C0FDAA /* Works.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Works.swift; sourceTree = "<group>"; };
 		FBED68222CDE776600C0FDAA /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				FBAF92472CED330400D84A26 /* WorkCell_Estilo.swift */,
+				FBA87DE32CEE502200EA048A /* ChaptersCell_Estilo.swift */,
 			);
 			path = Estilo;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 				FBED68302CDE81C300C0FDAA /* ResultsViewController.swift */,
 				FBED68342CDE827500C0FDAA /* WorkDetailViewController.swift */,
 				FB2D10142CE277AA00F68207 /* WorksCollectionCell.swift */,
+				FBA87DE12CEE470B00EA048A /* ChapterContentVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				FBED68312CDE81C300C0FDAA /* ResultsViewController.swift in Sources */,
 				FB3656372CD935FF0053D590 /* ViewController.swift in Sources */,
 				FBED68352CDE827500C0FDAA /* WorkDetailViewController.swift in Sources */,
+				FBA87DE22CEE470B00EA048A /* ChapterContentVC.swift in Sources */,
 				FBED68332CDE821400C0FDAA /* WorkDetailViewModel.swift in Sources */,
 				FBED68232CDE776600C0FDAA /* Chapter.swift in Sources */,
 				FBED682B2CDE7F1F00C0FDAA /* SearchVM.swift in Sources */,
@@ -343,6 +350,7 @@
 				FBED68252CDE77AE00C0FDAA /* User.swift in Sources */,
 				FBED68212CDE765F00C0FDAA /* Works.swift in Sources */,
 				FB2D10152CE277AA00F68207 /* WorksCollectionCell.swift in Sources */,
+				FBA87DE42CEE502200EA048A /* ChaptersCell_Estilo.swift in Sources */,
 				FBED68272CDE7EA500C0FDAA /* Network.swift in Sources */,
 				FB3656352CD935FF0053D590 /* SceneDelegate.swift in Sources */,
 			);
