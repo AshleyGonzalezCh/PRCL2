@@ -16,7 +16,7 @@ extension WorkDetailViewController {
 
         let totalSpacing = (margin * 2) + (spacing * (columns - 1))
         let itemWidth = (collectionView.frame.width - totalSpacing) / columns
-        let itemHeight = itemWidth * 0.8 // Ajusta la altura como proporción del ancho
+        let itemHeight = itemWidth * 0.3 // Ajusta la altura como proporción del ancho
 
         return CGSize(width: itemWidth, height: itemHeight)
     }

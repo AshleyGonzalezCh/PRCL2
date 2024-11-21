@@ -26,22 +26,44 @@ class SearchViewController: UIViewController {
             // Redondear bordes (opcional)
         btn_buscar.layer.cornerRadius = 8.0 // Ajusta según tus necesidades
         btn_buscar.clipsToBounds = true
+        
+        if #available(iOS 13.0, *) {
+            // Configura el borde del campo de texto de la barra de búsqueda
+            let searchTextField = searchBar.value(forKey: "searchField") as? UITextField
+            searchTextField?.layer.borderWidth = 1.0 // Grosor del borde
+            searchTextField?.layer.borderColor = UIColor.white.cgColor // Color del borde
+            searchTextField?.layer.cornerRadius = 8.0 // Radio de los bordes (opcional)
+            searchTextField?.clipsToBounds = true
+        }
+
+        
+        
     }
     @IBAction func searchButtonTapped(_ sender: UIButton) {
         guard let author = searchBar.text, !author.isEmpty else { return }
-        // Llama al ViewModel para hacer la búsqueda solo por autor
+        
         viewModel.searchWorks(query: author) { [weak self] result in
             switch result {
-            case .success(_):
-                // Asegúrate de realizar el segue en el hilo principal
+            case .success(let works): // Aquí obtenemos los resultados directamente
                 DispatchQueue.main.async {
-                    self?.performSegue(withIdentifier: "resultados", sender: nil)
+                    if works.isEmpty {
+                        // No se encontraron resultados
+                        self?.showNoResultsAlert()
+                    } else {
+                        // Navega a la pantalla de resultados
+                        self?.performSegue(withIdentifier: "resultados", sender: nil)
+                    }
                 }
             case .failure(let error):
-                print("Error: \(error)")
+                DispatchQueue.main.async {
+                    print("Error: \(error)")
+                    self?.showNoResultsAlert() // Muestra alerta también en caso de error
+                }
             }
         }
     }
+    
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultados",
@@ -55,4 +77,20 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchButtonTapped(UIButton()) // Activa el botón de búsqueda
     }
+    
+    func showNoResultsAlert() {
+            let alert = UIAlertController(
+                title: "No se encontraron resultados",
+                message: "No se encontraron resultados para el autor ingresado. Por favor, intenta nuevamente.",
+                preferredStyle: .alert
+            )
+            
+            // Acción para reintentar
+            let retryAction = UIAlertAction(title: "Reintentar", style: .default) { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true) // Regresa a la pantalla anterior
+            }
+            
+            alert.addAction(retryAction)
+            present(alert, animated: true, completion: nil)
+        }
 }

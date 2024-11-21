@@ -60,7 +60,8 @@ class WorkDetailViewController: UIViewController {
 
             // Las celdas restantes mostrarán los capítulos
             cell.C_CapTitle.text = chapter?.title
-            cell.C_NumCap.text = "Chapter \(String(describing: chapter?.number))"
+            cell.C_NumCap.text = "Capítulo \(chapter?.number ?? 0)"
+
             cell.C_CapSummary.text = chapter?.summary ?? "No summary available"
             
             return cell

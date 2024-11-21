@@ -21,14 +21,14 @@ class SearchViewModel {
     var updateUI: (() -> Void)?
     
     // Realiza la búsqueda usando el endpoint de `/search`
-    func searchWorks(query: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func searchWorks(query: String, completion: @escaping (Result<[Work], Error>) -> Void) {
         NetworkService.shared.searchWorks(query: query) { [weak self] works in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 if let works = works {
                     self.searchResults = works
                     print(works)
-                    completion(.success(()))
+                    completion(.success(works)) // Pasamos los resultados al closure
                 } else {
                     print("Error: No se encontraron resultados.")
                     completion(.failure(NetworkError.noData))
