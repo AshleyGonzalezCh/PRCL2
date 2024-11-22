@@ -6,65 +6,68 @@
 //
 
 import UIKit
- 
+
 class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var btn_buscar: UIButton!
     private let viewModel = SearchViewModel()
     
+    // Nuevo flag para verificar si la búsqueda está en curso
+    private var isSearching = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         
-        // Fondo negro
+        // Configuración del botón de búsqueda
         btn_buscar.backgroundColor = .black
-            
-            // Borde blanco
         btn_buscar.layer.borderColor = UIColor.white.cgColor
         btn_buscar.layer.borderWidth = 1.0
-
-            // Redondear bordes (opcional)
-        btn_buscar.layer.cornerRadius = 8.0 // Ajusta según tus necesidades
+        btn_buscar.layer.cornerRadius = 8.0
         btn_buscar.clipsToBounds = true
         
         if #available(iOS 13.0, *) {
-            // Configura el borde del campo de texto de la barra de búsqueda
             let searchTextField = searchBar.value(forKey: "searchField") as? UITextField
-            searchTextField?.layer.borderWidth = 1.0 // Grosor del borde
-            searchTextField?.layer.borderColor = UIColor.white.cgColor // Color del borde
-            searchTextField?.layer.cornerRadius = 8.0 // Radio de los bordes (opcional)
+            searchTextField?.layer.borderWidth = 1.0
+            searchTextField?.layer.borderColor = UIColor.white.cgColor
+            searchTextField?.layer.cornerRadius = 8.0
             searchTextField?.clipsToBounds = true
         }
-
-        
-        
     }
+    
     @IBAction func searchButtonTapped(_ sender: UIButton) {
-        guard let author = searchBar.text, !author.isEmpty else { return }
+        guard !isSearching, let author = searchBar.text, !author.isEmpty else { return }
+
+        // Establecer que la búsqueda está en curso
+        isSearching = true
+
+        // Limpia resultados previos antes de buscar
+        viewModel.clearResults()
         
+        // Deshabilita temporalmente el botón para evitar múltiples llamados
+        btn_buscar.isEnabled = false
+
         viewModel.searchWorks(query: author) { [weak self] result in
-            switch result {
-            case .success(let works): // Aquí obtenemos los resultados directamente
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                // Rehabilita el botón y marca la búsqueda como completada
+                self?.btn_buscar.isEnabled = true
+                self?.isSearching = false
+                
+                switch result {
+                case .success(let works):
                     if works.isEmpty {
-                        // No se encontraron resultados
                         self?.showNoResultsAlert()
                     } else {
-                        // Navega a la pantalla de resultados
                         self?.performSegue(withIdentifier: "resultados", sender: nil)
                     }
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
+                case .failure(let error):
                     print("Error: \(error)")
-                    self?.showNoResultsAlert() // Muestra alerta también en caso de error
+                    self?.showNoResultsAlert()
                 }
             }
         }
     }
     
-    
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "resultados",
            let resultsVC = segue.destination as? ResultsViewController {
@@ -72,25 +75,25 @@ class SearchViewController: UIViewController {
         }
     }
 }
- 
+
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchButtonTapped(UIButton()) // Activa el botón de búsqueda
     }
     
     func showNoResultsAlert() {
-            let alert = UIAlertController(
-                title: "No se encontraron resultados",
-                message: "No se encontraron resultados para el autor ingresado. Por favor, intenta nuevamente.",
-                preferredStyle: .alert
-            )
-            
-            // Acción para reintentar
-            let retryAction = UIAlertAction(title: "Reintentar", style: .default) { [weak self] _ in
-                self?.navigationController?.popViewController(animated: true) // Regresa a la pantalla anterior
-            }
-            
-            alert.addAction(retryAction)
-            present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(
+            title: "No se encontraron resultados",
+            message: "No se encontraron resultados para el autor ingresado. Por favor, intenta nuevamente.",
+            preferredStyle: .alert
+        )
+        
+        let retryAction = UIAlertAction(title: "Reintentar", style: .default) { [weak self] _ in
+            self?.navigationController?.popViewController(animated: true) // Regresa a la pantalla anterior
         }
+        
+        alert.addAction(retryAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
+

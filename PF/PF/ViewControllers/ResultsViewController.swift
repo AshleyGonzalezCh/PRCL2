@@ -10,28 +10,19 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: SearchViewModel!
+    var viewModel: SearchViewModel! // Inyectado desde el controlador anterior
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-
-    func someBackgroundTask() {
-        // Simulamos una operación en segundo plano
-        DispatchQueue.global(qos: .background).async {
-            // Código de operación en segundo plano (por ejemplo, una llamada a una API)
-            
-            DispatchQueue.main.async {
-                // Asegúrate de llamar al segue en el hilo principal
-                self.performSegue(withIdentifier: "resultados", sender: nil)
-            }
-        }
+    
+    func clearPreviousResults() {
+        viewModel.searchResults.removeAll() // Limpia los resultados previos
+        collectionView.reloadData() // Actualiza la vista de la colección
     }
-
-
 }
 
 extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -45,7 +36,7 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let viewModel = viewModel else {
-            return UICollectionViewCell()  // Si viewModel es nil, devolvemos una celda vacía
+            return UICollectionViewCell() // Si viewModel es nil, devolvemos una celda vacía
         }
 
         let work = viewModel.searchResults[indexPath.row]
@@ -65,7 +56,11 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         }
 
         let work = viewModel.searchResults[indexPath.row]
- 
+
+        // Instanciar solo si aún no se ha empujado el controlador
+        if self.navigationController?.topViewController is WorkDetailViewController {
+            return
+        }
 
         // Llamamos al método para navegar a la vista de detalles de la obra
         DispatchQueue.main.async {
@@ -79,3 +74,4 @@ extension ResultsViewController: UICollectionViewDataSource, UICollectionViewDel
         }
     }
 }
+

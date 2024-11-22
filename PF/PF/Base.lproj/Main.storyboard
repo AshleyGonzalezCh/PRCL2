@@ -116,9 +116,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cda-qs-WUi">
-                                <rect key="frame" x="8" y="0.0" width="376" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cda-qs-WUi">
+                                <rect key="frame" x="9" y="0.0" width="375" height="852"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8hx-tP-9K2">
                                     <size key="itemSize" width="363" height="242"/>
@@ -128,7 +127,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="WorkCell" id="UGD-4I-zH0" customClass="WorksCollectionCell" customModule="PF" customModuleProvider="target">
-                                        <rect key="frame" x="6.666666666666667" y="0.0" width="363" height="242"/>
+                                        <rect key="frame" x="6" y="0.0" width="363" height="242"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="U0K-uQ-WoM">
                                             <rect key="frame" x="0.0" y="0.0" width="363" height="242"/>
@@ -199,6 +198,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LvF-Vq-pbZ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cda-qs-WUi" firstAttribute="centerY" secondItem="6gQ-ex-5cx" secondAttribute="centerY" id="2f0-pV-R38"/>
+                            <constraint firstItem="cda-qs-WUi" firstAttribute="centerX" secondItem="6gQ-ex-5cx" secondAttribute="centerX" id="7eR-zy-yYX"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="cda-qs-WUi" secondAttribute="bottom" constant="-34" id="MDC-IW-DOL"/>
+                            <constraint firstItem="cda-qs-WUi" firstAttribute="leading" secondItem="LvF-Vq-pbZ" secondAttribute="leading" constant="9" id="Xef-OZ-mB1"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ykh-9p-bir"/>
                     <value key="contentSizeForViewInPopover" type="size" width="390" height="850"/>
@@ -208,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQw-2d-mGf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="683" y="4"/>
+            <point key="canvasLocation" x="681.67938931297704" y="3.5211267605633805"/>
         </scene>
         <!--Work Detail View Controller-->
         <scene sceneID="IPg-Tn-eje">

@@ -36,6 +36,11 @@ class SearchViewModel {
             }
         }
     }
+    
+    func clearResults() {
+        searchResults = [] // Vacia los resultados actuales
+    }
+
 }
 
 // Error personalizado para la red
@@ -46,3 +51,4 @@ enum NetworkError: Error {
 }
 
 // DeviantsNLiars
+//Emeline_Sparkz
